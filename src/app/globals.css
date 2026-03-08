@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --synapse-blue: #1A2A6C;
+    /* Trust */
+    --synapse-gold: #FDBB2D;
+    /* Action/Excitement */
+    --synapse-warm-bg: #F9F7F2;
+    /* Visual Comfort */
+    --synapse-text: #2D3436;
+    /* High-legibility Gray */
+    --synapse-text-muted: #636e72;
+
+    --border-radius: 12px;
+    --font-main: 'Inter', sans-serif;
+    --font-classic: 'Lora', serif;
+
+    --background: var(--synapse-warm-bg);
+    --foreground: var(--synapse-text);
+  }
+
+  body {
+    font-size: 18px;
+    line-height: 1.6;
+    background-color: var(--synapse-warm-bg);
+    color: var(--synapse-text);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    font-weight: 800;
+    color: var(--synapse-blue);
+  }
+
+  p,
+  span,
+  li,
+  a {
+    font-family: var(--font-classic);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply transition-all duration-300 transform inline-block text-center cursor-pointer;
+    background-color: var(--synapse-gold);
+    color: var(--synapse-blue);
+    font-weight: 800;
+    padding: 1.5rem 3rem;
+    border-radius: var(--border-radius);
+    font-family: var(--font-main);
+  }
+
+  .btn-primary:hover {
+    @apply scale-105;
+    background-color: #e5a92a;
+  }
+
+  .btn-secondary {
+    @apply transition-all duration-300 transform inline-block text-center cursor-pointer border-2;
+    border-color: var(--synapse-blue);
+    background: transparent;
+    color: var(--synapse-blue);
+    font-weight: 800;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    font-family: var(--font-main);
+  }
+
+  .btn-secondary:hover {
+    @apply scale-105;
+    background-color: var(--synapse-blue);
+    color: white;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(26, 42, 108, 0.1);
+  }
+
+  .card {
+    @apply p-8 rounded-2xl bg-white shadow-xl border border-zinc-100;
+  }
+}
